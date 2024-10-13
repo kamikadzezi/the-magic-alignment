@@ -1,17 +1,18 @@
-package SelectionOfLayout
+package selectionOfLayout
 
 import androidx.compose.foundation.Image
 import androidx.compose.foundation.background
 import androidx.compose.foundation.border
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Column
-import androidx.compose.foundation.layout.Row
+import androidx.compose.foundation.layout.PaddingValues
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.size
 import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.material3.Text
+import androidx.compose.material3.TextButton
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.draw.paint
@@ -22,14 +23,15 @@ import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.text.TextStyle
 import androidx.compose.ui.text.font.FontWeight
-import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
+import androidx.navigation.NavController
 import com.example.themagicalignment.R
+import com.example.themagicalignment.Screen
 import com.example.themagicalignment.ui.theme.ManropeFont
 
 @Composable
-fun SelectionOfLayout() {
+fun SelectionOfLayout(navController: NavController) {
     Column(
         verticalArrangement = Arrangement.SpaceBetween,
         modifier = Modifier
@@ -65,15 +67,24 @@ fun SelectionOfLayout() {
                 )
             }
             Column(Modifier.padding(start = 24.dp, end = 24.dp, bottom = 36.dp)) {
-                ChoiceButton(
-                    stringResource(R.string.button_offline_choice_deck),
+                TextButton(
+                    onClick = { navController.navigate(route = Screen.SecondScreen.route) },
                     Modifier
                         .fillMaxWidth()
                         .border(1.dp, Color(222, 146, 1), RoundedCornerShape(24.dp)),
-                    Color(222, 146, 1),
-                )
-                ChoiceButton(
-                    stringResource(R.string.button_online_choice_deck),
+                    contentPadding = PaddingValues(0.dp)
+                ) {
+                    Text(
+                        text = stringResource(R.string.button_offline_choice_deck),
+                        fontFamily = ManropeFont,
+                        fontWeight = FontWeight.SemiBold,
+                        fontSize = 16.sp,
+                        color = Color(222, 146, 1),
+                        modifier = Modifier.padding(0.dp, 13.dp)
+                    )
+                }
+                TextButton(
+                    onClick = { },
                     Modifier
                         .fillMaxWidth()
                         .padding(top = 16.dp)
@@ -83,8 +94,19 @@ fun SelectionOfLayout() {
                                     Color(242, 208, 80), Color(222, 146, 1),
                                 )
                             ), RoundedCornerShape(24.dp)
-                        )
-                )
+                        ),
+                    contentPadding = PaddingValues(0.dp)
+                ) {
+                    Text(
+                        text = stringResource(R.string.button_online_choice_deck),
+                        fontFamily = ManropeFont,
+                        fontWeight = FontWeight.SemiBold,
+                        fontSize = 16.sp,
+                        color = Color.Black,
+                        modifier = Modifier.padding(0.dp, 13.dp)
+                    )
+                }
+
             }
 
 
@@ -93,29 +115,9 @@ fun SelectionOfLayout() {
     }
 
 
-@Composable
-fun ChoiceButton(
-    textChoiceButton: String,
-    modifier: Modifier = Modifier,
-    color: Color = Color.Black
-) {
-    Row(
-        modifier = modifier,
-        horizontalArrangement = Arrangement.Center
-    ) {
-        Text(
-            text = textChoiceButton,
-            fontFamily = ManropeFont,
-            fontWeight = FontWeight.SemiBold,
-            fontSize = 16.sp,
-            color = color,
-            modifier = Modifier.padding(0.dp, 13.dp)
-        )
 
-    }
-}
-@Preview(showBackground = true)
-@Composable
-fun GreetingPreview() {
-    SelectionOfLayout()
-}
+
+
+
+
+

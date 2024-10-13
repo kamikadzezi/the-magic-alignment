@@ -22,7 +22,6 @@ import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.text.TextStyle
 import androidx.compose.ui.text.font.FontWeight
-import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import com.example.themagicalignment.R
@@ -36,6 +35,7 @@ fun CardSelectionScreen() {
             .background(color = Color(5, 4, 16))
             .verticalScroll(rememberScrollState(0))
     ) {
+
         Image(
             painter = painterResource(R.drawable.top_navigation_bar),
             contentDescription = "Navigation bar",
@@ -54,8 +54,8 @@ fun CardSelectionScreen() {
                 text = stringResource(R.string.card_selection_screen_text),
                 fontFamily = ManropeFont,
                 fontSize = 16.sp,
-                color = Color(181, 181, 183),
-                style = TextStyle(letterSpacing = 0.5.sp),
+                color = Color(181, 181, 183, 204),
+                style = TextStyle(letterSpacing = 0.3.sp),
                 lineHeight = 22.sp
             )
         }
@@ -101,9 +101,3 @@ fun ImageChoice(@DrawableRes image: Int, contentDescription: String) {
     )
 }
 
-@Preview(showBackground = true, heightDp = 1000)
-@Composable
-fun GreetingPreview(
-) {
-    CardSelectionScreen()
-}
