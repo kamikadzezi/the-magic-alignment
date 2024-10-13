@@ -26,9 +26,12 @@ import androidx.compose.ui.layout.ContentScale
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.text.TextStyle
+import androidx.compose.ui.text.font.FontFamily
+import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
+import com.example.themagicalignment.ui.theme.ManropeFont
 import com.example.themagicalignment.ui.theme.TheMagicAlignmentTheme
 
 class MainActivity : ComponentActivity() {
@@ -66,16 +69,17 @@ fun SelectionOfLayout() {
             Column(Modifier.padding(horizontal = 24.dp)) {
             Text(
                 text = stringResource(R.string.title_deck_selection),
-                //fontFamily = manropeFamily,
-                //fontWeight = FontWeight.SemiBold,
+                fontFamily = ManropeFont,
+                fontWeight = FontWeight.SemiBold,
                 fontSize = 22.sp,
                 color = Color.White,
                 modifier = Modifier.padding(bottom = 12.dp)
                 )
             Text(
                 text = stringResource(R.string.text_deck_selection),
+                fontFamily = ManropeFont,
                 fontSize = 16.sp,
-                color = Color.White,
+                color = Color(181,181,183),
                 style = TextStyle(letterSpacing = 0.5.sp),
                 lineHeight = 22.sp
             )
@@ -93,7 +97,6 @@ fun SelectionOfLayout() {
                     Modifier
                         .fillMaxWidth()
                         .padding(top = 16.dp)
-                        .border(1.dp, Color(222, 146, 1), RoundedCornerShape(24.dp))
                         .background(
                             Brush.horizontalGradient(
                                 colors = listOf(
@@ -122,6 +125,8 @@ fun ChoiceButton(
     ) {
         Text(
             text = textChoiceButton,
+            fontFamily = ManropeFont,
+            fontWeight = FontWeight.SemiBold,
             fontSize = 16.sp,
             color = color,
             modifier = Modifier.padding(0.dp, 13.dp)

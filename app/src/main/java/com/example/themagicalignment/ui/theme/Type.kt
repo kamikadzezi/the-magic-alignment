@@ -2,9 +2,19 @@ package com.example.themagicalignment.ui.theme
 
 import androidx.compose.material3.Typography
 import androidx.compose.ui.text.TextStyle
+import androidx.compose.ui.text.font.Font
 import androidx.compose.ui.text.font.FontFamily
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.unit.sp
+import com.example.themagicalignment.R
+
+val ManropeFont = FontFamily(
+    Font(R.font.manrope),
+    Font(R.font.manrope_semibold,FontWeight.SemiBold)
+)
+val FontManrope = TextStyle(
+    fontFamily = ManropeFont
+)
 
 // Set of Material typography styles to start with
 val Typography = Typography(
