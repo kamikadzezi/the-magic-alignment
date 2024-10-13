@@ -1,3 +1,7 @@
 <resources>
     <string name="app_name">theMagicAlignment</string>
+    <string name="title_deck_selection">Выбор колоды карт</string>
+    <string name="text_deck_selection">Вы можете сделать расклад через приложение или сделать физический расклад и отсканировать результат</string>
+    <string name="button_offline_choice_deck">Выбрать оффлайн расклад</string>
+    <string name="button_online_choice_deck">Выбрать онлайн расклад</string>
 </resources>
