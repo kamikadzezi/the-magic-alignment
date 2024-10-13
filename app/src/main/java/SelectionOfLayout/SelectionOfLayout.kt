@@ -4,7 +4,6 @@ import androidx.compose.foundation.Image
 import androidx.compose.foundation.background
 import androidx.compose.foundation.border
 import androidx.compose.foundation.layout.Arrangement
-import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Row
 import androidx.compose.foundation.layout.fillMaxSize
@@ -31,7 +30,8 @@ import com.example.themagicalignment.ui.theme.ManropeFont
 
 @Composable
 fun SelectionOfLayout() {
-    Box(
+    Column(
+        verticalArrangement = Arrangement.SpaceBetween,
         modifier = Modifier
             .fillMaxSize()
             .background(color = Color(5, 4, 16))
@@ -40,11 +40,9 @@ fun SelectionOfLayout() {
                 alpha = 0.1f,
                 contentScale = ContentScale.Crop,
             )
-
     ) {
-        Column(verticalArrangement = Arrangement.SpaceBetween, modifier = Modifier.fillMaxSize()) {
             Image(
-                painter = painterResource(R.drawable.navigation_bar),
+                painter = painterResource(R.drawable.top_navigation_bar),
                 contentDescription = "Navigation bar",
                 modifier = Modifier.size(390.dp, 71.dp)
             )
@@ -93,7 +91,7 @@ fun SelectionOfLayout() {
         }
 
     }
-}
+
 
 @Composable
 fun ChoiceButton(

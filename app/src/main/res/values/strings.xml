@@ -4,4 +4,15 @@
     <string name="text_deck_selection">Вы можете сделать расклад через приложение или сделать физический расклад и отсканировать результат</string>
     <string name="button_offline_choice_deck">Выбрать оффлайн расклад</string>
     <string name="button_online_choice_deck">Выбрать онлайн расклад</string>
+    <string name="card_selection_screen_title">Выбор иллюстрации</string>
+    <string name="card_selection_screen_text">Вы можете сделать выбор иллюстраций карт Таро. Выбирайте то, что нравится, это поможет глубже разобрать вашу ситуацию</string>
+    <string name="description_frame_1">Загадочная баба</string>
+    <string name="description_frame_3">Звёздочка</string>
+    <string name="description_frame_5">Мужик сидит</string>
+    <string name="description_frame_7">Добрая звёздочка</string>
+    <string name="description_frame_2">Красивая баба</string>
+    <string name="description_frame_4">Морская звёздочка</string>
+    <string name="description_frame_6">Тапающая звёздочка</string>
+    <string name="description_frame_8">Злая звёздочка</string>
+    <string name="navigation_buttom">Навигация по приложению</string>
 </resources>
