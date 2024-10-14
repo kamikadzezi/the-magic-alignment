@@ -23,6 +23,7 @@ import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.text.TextStyle
 import androidx.compose.ui.text.font.FontWeight
+import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import androidx.navigation.NavController
@@ -32,7 +33,7 @@ import com.example.themagicalignment.ui.theme.ManropeFont
 import com.example.themagicalignment.ui.theme.components.MagicButtonOutlined
 
 @Composable
-fun SelectionOfLayout( // todo: Preview
+fun SelectionOfLayout( //
     onChooseCardScreen: () -> Unit,
 ) {
     Column(
@@ -102,6 +103,11 @@ fun SelectionOfLayout( // todo: Preview
             }
         }
     }
+@Preview(showBackground = true)
+@Composable
+fun SelectionOfLayout(){
+    SelectionOfLayout(onChooseCardScreen = { })
+}
 
 
 
