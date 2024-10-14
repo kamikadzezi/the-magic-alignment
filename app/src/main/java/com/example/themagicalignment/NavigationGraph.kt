@@ -18,7 +18,9 @@ fun NavigationGraph(
         composable(
             route = Screen.HomeScreen.route
         ) {
-            SelectionOfLayout(navController = navController)
+            SelectionOfLayout(
+                onChooseCardScreen = {} // TODO #6 - Добавить переход на экран выбора колоды
+            )
         }
         composable(
             route = Screen.SecondScreen.route

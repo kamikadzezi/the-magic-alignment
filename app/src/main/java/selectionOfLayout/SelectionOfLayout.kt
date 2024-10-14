@@ -2,14 +2,14 @@ package selectionOfLayout
 
 import androidx.compose.foundation.Image
 import androidx.compose.foundation.background
-import androidx.compose.foundation.border
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.PaddingValues
+import androidx.compose.foundation.layout.Spacer
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.fillMaxWidth
+import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.padding
-import androidx.compose.foundation.layout.size
 import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.material3.Text
 import androidx.compose.material3.TextButton
@@ -29,9 +29,12 @@ import androidx.navigation.NavController
 import com.example.themagicalignment.R
 import com.example.themagicalignment.Screen
 import com.example.themagicalignment.ui.theme.ManropeFont
+import com.example.themagicalignment.ui.theme.components.MagicButtonOutlined
 
 @Composable
-fun SelectionOfLayout(navController: NavController) {
+fun SelectionOfLayout( // todo: Preview
+    onChooseCardScreen: () -> Unit,
+) {
     Column(
         verticalArrangement = Arrangement.SpaceBetween,
         modifier = Modifier
@@ -46,8 +49,8 @@ fun SelectionOfLayout(navController: NavController) {
             Image(
                 painter = painterResource(R.drawable.top_navigation_bar),
                 contentDescription = "Navigation bar",
-                modifier = Modifier.size(390.dp, 71.dp)
-            )
+                modifier = Modifier.fillMaxWidth().height(56.dp) // TODO #2 - Исправить размеры при реалзиации компонтентов
+            ) // TODO #1 - Удалить из проекта такого рода реализацию апп бара, использовать кастомнпый TopAppBar с кликами, тайтлом, иконками
             Column(Modifier.padding(horizontal = 24.dp)) {
                 Text(
                     text = stringResource(R.string.title_deck_selection),
@@ -55,36 +58,25 @@ fun SelectionOfLayout(navController: NavController) {
                     fontWeight = FontWeight.SemiBold,
                     fontSize = 22.sp,
                     color = Color.White,
-                    modifier = Modifier.padding(bottom = 12.dp)
+                    modifier = Modifier
                 )
+                Spacer(Modifier.height(12.dp))
                 Text(
                     text = stringResource(R.string.text_deck_selection),
                     fontFamily = ManropeFont,
                     fontSize = 16.sp,
-                    color = Color(181,181,183),
+                    color = Color(181,181,183), // TODO #6 - Постараться внедрить цвета в дизайн схему
                     style = TextStyle(letterSpacing = 0.5.sp),
                     lineHeight = 22.sp
                 )
             }
             Column(Modifier.padding(start = 24.dp, end = 24.dp, bottom = 36.dp)) {
-                TextButton(
-                    onClick = { navController.navigate(route = Screen.SecondScreen.route) },
-                    Modifier
-                        .fillMaxWidth()
-                        .border(1.dp, Color(222, 146, 1), RoundedCornerShape(24.dp)),
-                    contentPadding = PaddingValues(0.dp)
-                ) {
-                    Text(
-                        text = stringResource(R.string.button_offline_choice_deck),
-                        fontFamily = ManropeFont,
-                        fontWeight = FontWeight.SemiBold,
-                        fontSize = 16.sp,
-                        color = Color(222, 146, 1),
-                        modifier = Modifier.padding(0.dp, 13.dp)
-                    )
-                }
-                TextButton(
-                    onClick = { },
+                MagicButtonOutlined(
+                    onClick = onChooseCardScreen ,
+                    title = stringResource(R.string.button_offline_choice_deck)
+                )
+                TextButton( // TODO #5 - Сделать Filled кнопку, с учетом улучшений из Outlined кнопки
+                    onClick = { }, // TODO #6 - Добавить переход на экран выбора колоды
                     Modifier
                         .fillMaxWidth()
                         .padding(top = 16.dp)
@@ -108,10 +100,7 @@ fun SelectionOfLayout(navController: NavController) {
                 }
 
             }
-
-
         }
-
     }
 
 

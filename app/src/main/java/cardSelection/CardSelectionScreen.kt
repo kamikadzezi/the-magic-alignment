@@ -28,7 +28,7 @@ import com.example.themagicalignment.R
 import com.example.themagicalignment.ui.theme.ManropeFont
 
 @Composable
-fun CardSelectionScreen() {
+fun CardSelectionScreen() { // todo: Preview
     Column(
         modifier = Modifier
             .fillMaxSize()
@@ -71,7 +71,7 @@ fun CardSelectionScreen() {
                 ImageChoice(R.drawable.frame_4, stringResource(R.string.description_frame_4))
                 ImageChoice(R.drawable.frame_6, stringResource(R.string.description_frame_6))
                 ImageChoice(R.drawable.frame_8, stringResource(R.string.description_frame_8))
-            }
+            } // TODO-MAIN - При клике на картинку, с описанием колоды
 
         }
         Image(
@@ -90,14 +90,24 @@ fun CardSelectionScreen() {
 
 
 @Composable
-fun ImageChoice(@DrawableRes image: Int, contentDescription: String) {
+fun ImageChoice(
+    @DrawableRes image: Int,
+    contentDescription: String,
+    modifier: Modifier = Modifier
+) {
     Image(
         painter = painterResource(image),
         contentDescription = contentDescription,
         modifier = Modifier
             .padding(top = 16.dp)
             .width(163.dp)
-            .height(246.dp)
+            .height(246.dp) // todo: размеры так никогда больше не выставляем
     )
 }
+
+data class CardDeck(
+    // временно используем айди ресурса
+   @DrawableRes val id : Int,
+    val description : String
+) // TODO-Main2 - По этой моделе данных сформировать LazyGrid с картами
 
