@@ -15,4 +15,9 @@
     <string name="description_frame_6">Тапающая звёздочка</string>
     <string name="description_frame_8">Злая звёздочка</string>
     <string name="navigation_buttom">Навигация по приложению</string>
+    <string name="content_description_arrow_back_top_bar">arrow_back</string>
+    <string name="content_description_home_bottom_bar">home_bottom_bar</string>
+    <string name="content_description_card_bottom_bar">card_bottom_bar</string>
+    <string name="content_description_circle_bottom_bar">circle_bottom_bar</string>
+    <string name="content_description_book_bottom_bar">book_bottom_bar</string>
 </resources>

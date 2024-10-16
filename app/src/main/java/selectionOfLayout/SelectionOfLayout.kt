@@ -28,27 +28,28 @@ import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import com.example.themagicalignment.R
 import com.example.themagicalignment.ui.theme.ManropeFont
-import com.example.themagicalignment.ui.theme.components.MagicAppBar
 import com.example.themagicalignment.ui.theme.components.MagicButtonOutlined
+import com.example.themagicalignment.ui.theme.components.MagicTopAppBar
 
 @Composable
-fun SelectionOfLayout( //
+fun SelectionOfLayout(
+    //
     onChooseCardScreen: () -> Unit,
 ) {
-    Scaffold(topBar = { MagicAppBar({}) }) {
-    Column(
-        verticalArrangement = Arrangement.SpaceBetween,
-        modifier = Modifier
-            .fillMaxSize()
-            .background(color = Color(5, 4, 16))
-            .paint(
-                painterResource(R.drawable.backgroundchoicelayout),
-                alpha = 0.1f,
-                contentScale = ContentScale.Crop,
-            )
-            .padding(it)
-    ) {
-        Spacer(Modifier.height(0.dp))
+    Scaffold(topBar = { MagicTopAppBar({}) }) {
+        Column(
+            verticalArrangement = Arrangement.SpaceBetween,
+            modifier = Modifier
+                .fillMaxSize()
+                .background(color = Color(5, 4, 16))
+                .paint(
+                    painterResource(R.drawable.backgroundchoicelayout),
+                    alpha = 0.1f,
+                    contentScale = ContentScale.Crop,
+                )
+                .padding(it)
+        ) {
+            Spacer(Modifier.height(0.dp))
             Column(Modifier.padding(horizontal = 24.dp)) {
                 Text(
                     text = stringResource(R.string.title_deck_selection),
@@ -62,14 +63,18 @@ fun SelectionOfLayout( //
                     text = stringResource(R.string.text_deck_selection),
                     fontFamily = ManropeFont,
                     fontSize = 16.sp,
-                    color = Color(181,181,183), // TODO #6 - Постараться внедрить цвета в дизайн схему
+                    color = Color(
+                        181,
+                        181,
+                        183
+                    ), // TODO #6 - Постараться внедрить цвета в дизайн схему
                     style = TextStyle(letterSpacing = 0.5.sp),
                     lineHeight = 22.sp
                 )
             }
             Column(Modifier.padding(start = 24.dp, end = 24.dp, bottom = 36.dp)) {
                 MagicButtonOutlined(
-                    onClick = onChooseCardScreen ,
+                    onClick = onChooseCardScreen,
                     title = stringResource(R.string.button_offline_choice_deck)
                 )
                 TextButton( // TODO #5 - Сделать Filled кнопку, с учетом улучшений из Outlined кнопки
@@ -97,13 +102,13 @@ fun SelectionOfLayout( //
                 }
 
             }
-    }
+        }
     }
 }
 
 @Preview(showBackground = true)
 @Composable
-fun SelectionOfLayout(){
+fun SelectionOfLayout() {
     SelectionOfLayout(onChooseCardScreen = { })
 }
 

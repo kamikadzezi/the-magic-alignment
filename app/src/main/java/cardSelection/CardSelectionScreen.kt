@@ -6,18 +6,18 @@ import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Row
+import androidx.compose.foundation.layout.Spacer
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.padding
-import androidx.compose.foundation.layout.size
 import androidx.compose.foundation.layout.width
 import androidx.compose.foundation.rememberScrollState
 import androidx.compose.foundation.verticalScroll
+import androidx.compose.material3.Scaffold
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
-import androidx.compose.ui.layout.ContentScale
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.text.TextStyle
@@ -27,21 +27,19 @@ import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import com.example.themagicalignment.R
 import com.example.themagicalignment.ui.theme.ManropeFont
+import com.example.themagicalignment.ui.theme.components.MagicBottomAppBar
+import com.example.themagicalignment.ui.theme.components.MagicTopAppBar
 
 @Composable
-fun CardSelectionScreen() { //
+fun CardSelectionScreen(backClick: () -> Unit) {
+    Scaffold(topBar = { MagicTopAppBar(backClick) }, bottomBar = { MagicBottomAppBar() }) {
     Column(
         modifier = Modifier
             .fillMaxSize()
             .background(color = Color(5, 4, 16))
             .verticalScroll(rememberScrollState(0))
+            .padding(it)
     ) {
-
-        Image(
-            painter = painterResource(R.drawable.top_navigation_bar),
-            contentDescription = "Navigation bar",
-            modifier = Modifier.size(390.dp, 71.dp)
-        )
         Column(Modifier.padding(start = 24.dp, top = 36.dp, end = 24.dp, bottom = 8.dp)) {
             Text(
                 text = stringResource(R.string.card_selection_screen_title),
@@ -75,18 +73,11 @@ fun CardSelectionScreen() { //
             } // TODO-MAIN - При клике на картинку, с описанием колоды
 
         }
-        Image(
-            painter = painterResource(R.drawable.bottom_navigation_bar),
-            contentDescription = stringResource(R.string.navigation_buttom),
-            contentScale = ContentScale.FillWidth,
-            modifier = Modifier
-                .fillMaxSize()
-                .padding(top = 16.dp)
-                .height(60.dp)
-        )
+        Spacer(Modifier.height(36.dp))
 
     }
 
+    }
 }
 
 
@@ -115,6 +106,6 @@ data class CardDeck(
 @Preview(showBackground = true, heightDp = 1500)
 @Composable
 fun CardSelectionPreview(){
-    CardSelectionScreen()
+    CardSelectionScreen({})
 }
 

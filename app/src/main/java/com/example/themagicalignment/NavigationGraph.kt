@@ -25,7 +25,7 @@ fun NavigationGraph(
         composable(
             route = Screen.SecondScreen.route
         ) {
-            CardSelectionScreen()
+            CardSelectionScreen(backClick = { navController.navigate(Screen.HomeScreen.route) })
 
         }
     }
