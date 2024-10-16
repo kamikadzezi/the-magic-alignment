@@ -15,9 +15,9 @@ class MainActivity : ComponentActivity() {
         enableEdgeToEdge()
         setContent {
            TheMagicAlignmentTheme {
-               val navigationController = rememberNavController()
-               SelectionOfLayout(onChooseCardScreen = { navigationController.navigate(Screen.SecondScreen.route)})
-               NavigationGraph(navController = navigationController)
+               val navController = rememberNavController()
+               SelectionOfLayout(onChooseCardScreen = { navController.navigate(Screen.SecondScreen.route)})
+               NavigationGraph(navController = navController)
            }
         }
     }
