@@ -1,6 +1,5 @@
 package selectionOfLayout
 
-import androidx.compose.foundation.Image
 import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Column
@@ -11,6 +10,7 @@ import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.shape.RoundedCornerShape
+import androidx.compose.material3.Scaffold
 import androidx.compose.material3.Text
 import androidx.compose.material3.TextButton
 import androidx.compose.runtime.Composable
@@ -26,16 +26,16 @@ import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
-import androidx.navigation.NavController
 import com.example.themagicalignment.R
-import com.example.themagicalignment.Screen
 import com.example.themagicalignment.ui.theme.ManropeFont
+import com.example.themagicalignment.ui.theme.components.MagicAppBar
 import com.example.themagicalignment.ui.theme.components.MagicButtonOutlined
 
 @Composable
 fun SelectionOfLayout( //
     onChooseCardScreen: () -> Unit,
 ) {
+    Scaffold(topBar = { MagicAppBar({}) }) {
     Column(
         verticalArrangement = Arrangement.SpaceBetween,
         modifier = Modifier
@@ -46,12 +46,9 @@ fun SelectionOfLayout( //
                 alpha = 0.1f,
                 contentScale = ContentScale.Crop,
             )
+            .padding(it)
     ) {
-            Image(
-                painter = painterResource(R.drawable.top_navigation_bar),
-                contentDescription = "Navigation bar",
-                modifier = Modifier.fillMaxWidth().height(56.dp) // TODO #2 - Исправить размеры при реалзиации компонтентов
-            ) // TODO #1 - Удалить из проекта такого рода реализацию апп бара, использовать кастомнпый TopAppBar с кликами, тайтлом, иконками
+        Spacer(Modifier.height(0.dp))
             Column(Modifier.padding(horizontal = 24.dp)) {
                 Text(
                     text = stringResource(R.string.title_deck_selection),
@@ -59,7 +56,6 @@ fun SelectionOfLayout( //
                     fontWeight = FontWeight.SemiBold,
                     fontSize = 22.sp,
                     color = Color.White,
-                    modifier = Modifier
                 )
                 Spacer(Modifier.height(12.dp))
                 Text(
@@ -101,8 +97,10 @@ fun SelectionOfLayout( //
                 }
 
             }
-        }
     }
+    }
+}
+
 @Preview(showBackground = true)
 @Composable
 fun SelectionOfLayout(){
