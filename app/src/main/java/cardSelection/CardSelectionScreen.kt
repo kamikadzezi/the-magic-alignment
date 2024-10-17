@@ -13,6 +13,7 @@ import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.width
 import androidx.compose.foundation.rememberScrollState
 import androidx.compose.foundation.verticalScroll
+import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.Scaffold
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
@@ -26,6 +27,7 @@ import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import com.example.themagicalignment.R
+import com.example.themagicalignment.ui.theme.BackgroundBlack
 import com.example.themagicalignment.ui.theme.ManropeFont
 import com.example.themagicalignment.ui.theme.components.MagicBottomAppBar
 import com.example.themagicalignment.ui.theme.components.MagicTopAppBar
@@ -36,26 +38,19 @@ fun CardSelectionScreen(backClick: () -> Unit) {
     Column(
         modifier = Modifier
             .fillMaxSize()
-            .background(color = Color(5, 4, 16))
+            .background(color = BackgroundBlack)
             .verticalScroll(rememberScrollState(0))
             .padding(it)
     ) {
         Column(Modifier.padding(start = 24.dp, top = 36.dp, end = 24.dp, bottom = 8.dp)) {
             Text(
                 text = stringResource(R.string.card_selection_screen_title),
-                fontFamily = ManropeFont,
-                fontWeight = FontWeight.SemiBold,
-                fontSize = 22.sp,
-                color = Color.White,
+                style = MaterialTheme.typography.titleLarge,
                 modifier = Modifier.padding(bottom = 12.dp)
             )
             Text(
                 text = stringResource(R.string.card_selection_screen_text),
-                fontFamily = ManropeFont,
-                fontSize = 16.sp,
-                color = Color(181, 181, 183, 204),
-                style = TextStyle(letterSpacing = 0.3.sp),
-                lineHeight = 22.sp
+                style = MaterialTheme.typography.bodyLarge
             )
         }
         Row(horizontalArrangement = Arrangement.Center, modifier = Modifier.fillMaxSize()) {

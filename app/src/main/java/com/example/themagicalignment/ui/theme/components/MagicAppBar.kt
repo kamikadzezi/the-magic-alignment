@@ -3,6 +3,8 @@ package com.example.themagicalignment.ui.theme.components
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Row
 import androidx.compose.foundation.layout.fillMaxWidth
+import androidx.compose.foundation.layout.height
+import androidx.compose.foundation.layout.padding
 import androidx.compose.material3.ExperimentalMaterial3Api
 import androidx.compose.material3.Icon
 import androidx.compose.material3.IconButton
@@ -15,7 +17,9 @@ import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.tooling.preview.Preview
+import androidx.compose.ui.unit.dp
 import com.example.themagicalignment.R
+import com.example.themagicalignment.ui.theme.BottomNavColorDisable
 
 
 @OptIn(ExperimentalMaterial3Api::class)
@@ -39,8 +43,8 @@ fun MagicTopAppBar(onClick: () -> Unit) {
 
 @Composable
 fun MagicBottomAppBar() {
-    NavigationBar(containerColor = Color(0x66000000)) {
-        Row(Modifier.fillMaxWidth(), horizontalArrangement = Arrangement.SpaceAround) {
+    NavigationBar(containerColor = BottomNavColorDisable, modifier = Modifier.height(60.dp)) {
+        Row(Modifier.fillMaxWidth().padding(top = 15.dp), horizontalArrangement = Arrangement.SpaceAround,) {
             IconButton(onClick = {}) {
                 Icon(
                     painter = painterResource(R.drawable.homenavigation),
