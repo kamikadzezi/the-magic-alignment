@@ -9,11 +9,14 @@ import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.PaddingValues
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.height
+import androidx.compose.foundation.layout.heightIn
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.width
 import androidx.compose.foundation.lazy.grid.GridCells
 import androidx.compose.foundation.lazy.grid.LazyVerticalGrid
 import androidx.compose.foundation.lazy.grid.items
+import androidx.compose.foundation.rememberScrollState
+import androidx.compose.foundation.verticalScroll
 import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.Scaffold
 import androidx.compose.material3.Text
@@ -37,7 +40,7 @@ fun CardSelectionScreen(backClick: () -> Unit) {
         modifier = Modifier
             .fillMaxSize()
             .background(color = BackgroundBlack)
-            //.verticalScroll(rememberScrollState(0))
+            .verticalScroll(rememberScrollState(0))
             .padding(it)
     ) {
         Column(Modifier.padding(start = 24.dp, top = 36.dp, end = 24.dp, bottom = 8.dp)) {
@@ -55,7 +58,9 @@ fun CardSelectionScreen(backClick: () -> Unit) {
             columns = GridCells.Fixed(2),
             contentPadding = PaddingValues(start = 24.dp, top = 24.dp, end = 24.dp, bottom = 36.dp),
             verticalArrangement = Arrangement.spacedBy(16.dp),
-            horizontalArrangement = Arrangement.spacedBy(16.dp)
+            horizontalArrangement = Arrangement.spacedBy(16.dp),
+            userScrollEnabled = false,
+            modifier = Modifier.heightIn(max = 5000.dp)
         ) {
             items(CardDeckInitList()) { deck ->
                 ButtonImage(deck.id, deck.description)
