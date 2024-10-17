@@ -31,6 +31,6 @@ fun MagicButtonOutlined(
             style = MaterialTheme.typography.labelLarge,
             color = Orange,
             modifier = Modifier.padding(0.dp, 13.dp)
-        ) // TODO # - Скомпоновоть шрифт, размер, цвета в TextStyle,
+        )
     }
 }

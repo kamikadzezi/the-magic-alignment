@@ -1,14 +1,11 @@
 package com.example.themagicalignment.ui.theme
 
-import androidx.compose.foundation.layout.padding
 import androidx.compose.material3.Typography
-import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.text.TextStyle
 import androidx.compose.ui.text.font.Font
 import androidx.compose.ui.text.font.FontFamily
 import androidx.compose.ui.text.font.FontWeight
-import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import com.example.themagicalignment.R
 
@@ -25,7 +22,7 @@ val Typography = Typography(
     bodyLarge = TextStyle(
         fontFamily = ManropeFont,
         fontSize = 16.sp,
-        color = textBodyColor, // TODO #6 - Постараться внедрить цвета в дизайн схему
+        color = textBodyColor,
         letterSpacing = 0.3.sp,
         lineHeight = 22.sp
     ), titleLarge = TextStyle(
