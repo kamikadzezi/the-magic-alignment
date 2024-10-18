@@ -62,7 +62,7 @@ fun SelectionOfLayout(
                 )
                 MagicButtonFilled(
                     onClick = {},
-                    title = stringResource(R.string.button_online_choice_deck)
+                    title = stringResource(R.string.button_online_choice_deck),
                 )
 
             }

@@ -20,4 +20,7 @@
     <string name="content_description_card_bottom_bar">card_bottom_bar</string>
     <string name="content_description_circle_bottom_bar">circle_bottom_bar</string>
     <string name="content_description_book_bottom_bar">book_bottom_bar</string>
+    <string name="Deck_Description_two">Данные изображения были придуманы на основе работ Альфонсо Мухи.\n Передает трепетное и нежное отношение к себе.\n Данная колода говорит о том, что вы сейчас очень ранимы и ищете утешения.</string>
+    <string name="button_deck_description_two">Выбрать эту колоду</string>
+    <string name="title_deck_description_two">«Альфонсо Муха»</string>
 </resources>

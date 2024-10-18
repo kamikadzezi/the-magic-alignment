@@ -20,6 +20,7 @@ import com.example.themagicalignment.ui.theme.GradientButtomStart
 fun MagicButtonFilled(
     onClick : () -> Unit,
     title : String,
+    modifier: Modifier = Modifier
 ) {
     TextButton(
         onClick = onClick, //

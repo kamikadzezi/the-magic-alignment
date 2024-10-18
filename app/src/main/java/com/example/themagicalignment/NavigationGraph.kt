@@ -1,9 +1,11 @@
 package com.example.themagicalignment
 
+import android.util.EventLogTags.Description
 import androidx.compose.runtime.Composable
 import androidx.navigation.NavHostController
 import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
+import cardSelection.ButtonImage
 import cardSelection.CardSelectionScreen
 import selectionOfLayout.SelectionOfLayout
 
@@ -26,7 +28,6 @@ fun NavigationGraph(
             route = Screen.SecondScreen.route
         ) {
             CardSelectionScreen(backClick = { navController.navigate(Screen.HomeScreen.route) })
-
         }
     }
 }

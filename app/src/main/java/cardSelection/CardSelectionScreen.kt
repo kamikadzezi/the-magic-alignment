@@ -27,6 +27,7 @@ import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
+import androidx.navigation.NavHostController
 import com.example.themagicalignment.CardDeck
 import com.example.themagicalignment.R
 import com.example.themagicalignment.ui.theme.BackgroundBlack
@@ -63,7 +64,7 @@ fun CardSelectionScreen(backClick: () -> Unit) {
             modifier = Modifier.heightIn(max = 5000.dp)
         ) {
             items(CardDeckInitList()) { deck ->
-                ButtonImage(deck.id, deck.description)
+                ButtonImage(deck.id, deck.description,{})
             }
         }
 
@@ -78,8 +79,8 @@ fun CardSelectionScreen(backClick: () -> Unit) {
 
 fun CardDeckInitList(): List<CardDeck> {
     return listOf(
-        CardDeck(R.drawable.frame_1, "deck_1"),
-        CardDeck(R.drawable.frame_2, "deck_2"),
+        CardDeck(R.drawable.frame_1, "deck_1",),
+        CardDeck(R.drawable.frame_2, "deck_2",),
         CardDeck(R.drawable.frame_3, "deck_3"),
         CardDeck(R.drawable.frame_4, "deck_4"),
         CardDeck(R.drawable.frame_5, "deck_5"),
@@ -91,13 +92,14 @@ fun CardDeckInitList(): List<CardDeck> {
 @Composable
 fun ButtonImage(
     id: Int,
-    description: String
+    description: String,
+    onClick:()->Unit
 ) {
     Box(contentAlignment = Alignment.Center) {
         Image(painter = painterResource(id), description, modifier = Modifier
             .width(163.dp)
             .height(246.dp)
-            .clickable { })
+            .clickable {onClick })
     }
 
 }
