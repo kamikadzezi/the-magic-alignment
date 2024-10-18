@@ -20,7 +20,17 @@
     <string name="content_description_card_bottom_bar">card_bottom_bar</string>
     <string name="content_description_circle_bottom_bar">circle_bottom_bar</string>
     <string name="content_description_book_bottom_bar">book_bottom_bar</string>
-    <string name="Deck_Description_two">Данные изображения были придуманы на основе работ Альфонсо Мухи.\n Передает трепетное и нежное отношение к себе.\n Данная колода говорит о том, что вы сейчас очень ранимы и ищете утешения.</string>
-    <string name="button_deck_description_two">Выбрать эту колоду</string>
-    <string name="title_deck_description_two">«Альфонсо Муха»</string>
+    <string name="button_deck_description">Выбрать эту колоду</string>
+
+
+    <string name="body_deck_description_2">Данные изображения были придуманы на основе работ Альфонсо Мухи.\n Передает трепетное и нежное отношение к себе.\n Данная колода говорит о том, что вы сейчас очень ранимы и ищете утешения.</string>
+    <string name="title_deck_description_2">«Альфонсо Муха»</string>
+
+    <string name="body_deck_description_3">Такие иллюстрации выбирают уверенные в ситуации люди. Однако такая уверенность может приводить к инфантильным решениям.</string>
+    <string name="title_deck_description_3">«Граффити Мульт»</string>
+
+    <string name="body_deck_description_4">Акварель предпочитают те, которые тверды в своих решениях и ищут подтверждения своих мыслей. Для таких людей акварель привносит легкость в непростой ситуации, однако, это лишь внешнее проявления легкости.</string>
+    <string name="title_deck_description_4">«Акварель»</string>
+
+
 </resources>

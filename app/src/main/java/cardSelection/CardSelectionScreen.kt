@@ -27,16 +27,18 @@ import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
-import androidx.navigation.NavHostController
+import androidx.navigation.NavController
+import androidx.navigation.compose.rememberNavController
 import com.example.themagicalignment.CardDeck
 import com.example.themagicalignment.R
+import com.example.themagicalignment.Screen
 import com.example.themagicalignment.ui.theme.BackgroundBlack
 import com.example.themagicalignment.ui.theme.components.MagicBottomAppBar
 import com.example.themagicalignment.ui.theme.components.MagicTopAppBar
 
 @Composable
-fun CardSelectionScreen(backClick: () -> Unit) {
-    Scaffold(topBar = { MagicTopAppBar(backClick) }, bottomBar = { MagicBottomAppBar() }) {
+fun CardSelectionScreen(NavigateBack: () -> Unit, NavigationCardDescription: NavController) {
+    Scaffold(topBar = { MagicTopAppBar(NavigateBack) }, bottomBar = { MagicBottomAppBar() }) {
     Column(
         modifier = Modifier
             .fillMaxSize()
@@ -64,7 +66,7 @@ fun CardSelectionScreen(backClick: () -> Unit) {
             modifier = Modifier.heightIn(max = 5000.dp)
         ) {
             items(CardDeckInitList()) { deck ->
-                ButtonImage(deck.id, deck.description,{})
+                ButtonImage(deck.id, deck.textTitle, deck.textBody, NavigationCardDescription)
             }
         }
 
@@ -77,38 +79,69 @@ fun CardSelectionScreen(backClick: () -> Unit) {
     }
 }
 
+
 fun CardDeckInitList(): List<CardDeck> {
     return listOf(
-        CardDeck(R.drawable.frame_1, "deck_1",),
-        CardDeck(R.drawable.frame_2, "deck_2",),
-        CardDeck(R.drawable.frame_3, "deck_3"),
-        CardDeck(R.drawable.frame_4, "deck_4"),
-        CardDeck(R.drawable.frame_5, "deck_5"),
-        CardDeck(R.drawable.frame_6, "deck_6"),
-        CardDeck(R.drawable.frame_7, "deck_7"),
-        CardDeck(R.drawable.frame_8, "deck_8")
+        CardDeck(
+            R.drawable.frame_1,
+            R.string.title_deck_description_2,
+            R.string.body_deck_description_2
+        ),
+        CardDeck(
+            R.drawable.frame_2,
+            R.string.title_deck_description_2,
+            R.string.body_deck_description_2
+        ),
+        CardDeck(
+            R.drawable.frame_3,
+            R.string.title_deck_description_3,
+            R.string.body_deck_description_3
+        ),
+        CardDeck(
+            R.drawable.frame_4,
+            R.string.title_deck_description_4,
+            R.string.body_deck_description_4
+        ),
+        CardDeck(
+            R.drawable.frame_5,
+            R.string.title_deck_description_2,
+            R.string.body_deck_description_2
+        ),
+        CardDeck(
+            R.drawable.frame_6,
+            R.string.title_deck_description_2,
+            R.string.body_deck_description_2
+        ),
+        CardDeck(
+            R.drawable.frame_7,
+            R.string.title_deck_description_2,
+            R.string.body_deck_description_2
+        ),
+        CardDeck(
+            R.drawable.frame_8,
+            R.string.title_deck_description_2,
+            R.string.body_deck_description_2
+        )
     )
 }
 @Composable
 fun ButtonImage(
     id: Int,
-    description: String,
-    onClick:()->Unit
+    textTitle: Int,
+    textBody: Int,
+    navController: NavController
 ) {
     Box(contentAlignment = Alignment.Center) {
-        Image(painter = painterResource(id), description, modifier = Modifier
+        Image(painter = painterResource(id), stringResource(textTitle), modifier = Modifier
             .width(163.dp)
             .height(246.dp)
-            .clickable {onClick })
+            .clickable { navController.navigate(Screen.DeckDescription.route + "/$textTitle/$textBody/$id") })
     }
 
 }
-
-// *TODO-Main2 - По этой моделе данных сформировать LazyGrid с картами
-
 @Preview(heightDp = 1500)
 @Composable
 fun CardSelectionPreview(){
-    CardSelectionScreen({})
+    CardSelectionScreen({}, rememberNavController())
 }
 

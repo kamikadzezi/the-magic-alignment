@@ -27,7 +27,8 @@ import com.example.themagicalignment.ui.theme.components.MagicButtonFilled
 import com.example.themagicalignment.ui.theme.components.MagicTopAppBar
 
 @Composable
-fun DeckDescriptionTwo(backClick: () -> Unit) {
+fun DeckDescription(backClick: () -> Unit,textTitle: Int,textBody: Int,imageDeck: Int) {
+    val imageDescription = textTitle
     Scaffold(topBar = { MagicTopAppBar(backClick) }){
         Column(modifier = Modifier
             .fillMaxSize()
@@ -36,26 +37,22 @@ fun DeckDescriptionTwo(backClick: () -> Unit) {
             .padding(start = 24.dp, top = 36.dp, end = 24.dp, bottom = 36.dp), verticalArrangement = Arrangement.SpaceBetween) {
         Column() {
             Text(
-                text = stringResource(R.string.title_deck_description_two),
+                text = stringResource(textTitle),
                 style = MaterialTheme.typography.titleLarge,
                 modifier = Modifier.padding(bottom = 12.dp)
             )
             Row {
-                Image(painterResource(R.drawable.frame_2), contentDescription = stringResource(R.string.title_deck_description_two), modifier = Modifier
+                Image(painterResource(imageDeck), contentDescription = stringResource(imageDescription), modifier = Modifier
                     .height(246.dp)
                     .width(163.dp))
                 Spacer(modifier = Modifier.width(16.dp))
                 Text(
-                    text = stringResource(R.string.Deck_Description_two),
+                    text = stringResource(textBody),
                     style = MaterialTheme.typography.bodyLarge
                 )
             }}
-            MagicButtonFilled({}, stringResource(R.string.button_deck_description_two))
+            MagicButtonFilled({}, stringResource(R.string.button_deck_description))
 
         }
     }}
-        @Preview
-        @Composable
-        fun DeckDescriptionPreview() {
-            DeckDescriptionTwo({})
-        }
+

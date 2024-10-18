@@ -16,7 +16,6 @@ class MainActivity : ComponentActivity() {
         setContent {
            TheMagicAlignmentTheme {
                val navController = rememberNavController()
-               SelectionOfLayout(onChooseCardScreen = { navController.navigate(Screen.SecondScreen.route)})
                NavigationGraph(navController = navController)
            }
         }
