@@ -11,18 +11,18 @@ import androidx.compose.ui.Modifier
 import androidx.lifecycle.ViewModelProvider
 import com.example.themagicalignment.ui.theme.TheMagicAlignmentTheme
 import com.example.themagicalignment.view.LoginPage
-import com.example.themagicalignment.viewmodel.HomeViewModel
+import com.example.themagicalignment.viewmodel.LoginViewModel
 
 
 class MainActivity : ComponentActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         enableEdgeToEdge()
-        val homeViewModel = ViewModelProvider(this)[HomeViewModel::class]
+        val loginViewModel = ViewModelProvider(this)[LoginViewModel::class]
         setContent {
            TheMagicAlignmentTheme {
                Scaffold(modifier = Modifier.fillMaxSize()) { innerPadding ->
-                   LoginPage(modifier = Modifier.padding(innerPadding), homeViewModel, true)
+                   LoginPage(modifier = Modifier.padding(innerPadding), loginViewModel)
 
                }
            }

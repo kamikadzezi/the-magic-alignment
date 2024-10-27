@@ -70,4 +70,5 @@ dependencies {
     implementation(libs.androidx.navigation.compose)
     implementation(libs.androidx.lifecycle.viewmodel.compose)
     implementation(libs.androidx.lifecycle.livedata.ktx)
+    implementation(kotlin("reflect"))
 }
