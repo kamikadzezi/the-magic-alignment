@@ -21,4 +21,5 @@ dependencyResolutionManagement {
 
 rootProject.name = "theMagicAlignment"
 include(":app")
- 
+include(":core")
+include(":core:ui")
