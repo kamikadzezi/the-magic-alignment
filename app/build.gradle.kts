@@ -67,4 +67,7 @@ dependencies {
     debugImplementation(libs.androidx.ui.tooling)
     debugImplementation(libs.androidx.ui.test.manifest)
     implementation(libs.androidx.navigation.compose)
+
+    implementation(libs.orbit.mvi.compose)
+    implementation(libs.orbit.mvi.viewmodel)
 }

@@ -1,6 +1,5 @@
 package ru.magic.ui.contracts
 
-import org.orbitmvi.orbit.Container
 import org.orbitmvi.orbit.ContainerHost
 
 /**         todo:ui:education#2
@@ -13,5 +12,5 @@ interface ScreenContract<
         ACTION : ContainerContract.ActionContract
         > : ContainerHost<STATE,EFFECT> {
 
-    fun action(action: ACTION) : Unit
+    fun action(action: ACTION)
 }

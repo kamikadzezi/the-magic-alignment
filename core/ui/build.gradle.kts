@@ -46,7 +46,6 @@ dependencies {
     implementation(libs.androidx.ui.tooling.preview)
     implementation(libs.androidx.material3)
 
-    implementation(libs.orbit.mvi.core)
     implementation(libs.orbit.mvi.compose)
     implementation(libs.orbit.mvi.viewmodel)
 
