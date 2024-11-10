@@ -19,7 +19,7 @@ fun SampleRoot(
         }},
     ) { state ->
         TextField(
-            value = state.value.login,
+            value = state.login,
             onValueChange = remember {{ login ->
                 contract.action(SampleContract.SampleAction.OnLoinChanged(login))
             }}
