@@ -38,10 +38,10 @@ import kotlinx.coroutines.launch
 @Composable
 fun LoginPage(modifier: Modifier = Modifier, viewModel: LoginViewModel) {
     val context = LocalContext.current
-    val snackbarHostState = remember { SnackbarHostState() }
+    val snackBarHostState = remember { SnackbarHostState() }
     val scope = rememberCoroutineScope()
     val focusManager = LocalFocusManager.current
-    Scaffold(snackbarHost = { SnackbarHost(snackbarHostState) }) {
+    Scaffold(snackbarHost = { SnackbarHost(snackBarHostState) }) {
         Column(
             modifier = modifier
                 .fillMaxSize()
@@ -75,11 +75,11 @@ fun LoginPage(modifier: Modifier = Modifier, viewModel: LoginViewModel) {
                 focusManager.clearFocus()
                 if (viewModel.userDataVerification()) {
                     scope.launch {
-                        snackbarHostState.showSnackbar("Ok", actionLabel = "ok")
+                        snackBarHostState.showSnackbar("Ok", actionLabel = "ok")
                     }
                 } else {
                     scope.launch {
-                        snackbarHostState.showSnackbar("Не ок", actionLabel = "ok")
+                        snackBarHostState.showSnackbar("Не ок", actionLabel = "ok")
                     }
                 }
             } else {
