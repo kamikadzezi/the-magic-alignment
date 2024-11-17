@@ -3,6 +3,8 @@ package ru.magic.ui.contracts.sample.orbit
 import ru.magic.ui.contracts.ContainerContract
 import ru.magic.ui.contracts.ScreenContract
 
+
+
 interface SampleContract : ScreenContract<SampleContract.SampleState,SampleContract.SampleEffect,SampleContract.SampleAction> {
     data class SampleState(
         val login : String
@@ -17,6 +19,6 @@ interface SampleContract : ScreenContract<SampleContract.SampleState,SampleContr
     }
 
     sealed class SampleEffect : ContainerContract.EffectContract {
-
+        class ContainsHui : SampleEffect()
     }
 }

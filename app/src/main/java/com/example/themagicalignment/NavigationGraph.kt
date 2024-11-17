@@ -28,6 +28,12 @@ fun NavigationGraph(
         composable(
             route = Screen.SecondScreen.route
         ) {
+//            val viewModel : Example = viewModels()
+//            ExampleRoot(
+//                contract = viewModel,
+//                onNavigateBack = { navController.navigateUp() },
+//            )
+
             CardSelectionScreen(
                 NavigateBack = { navController.navigateUp() },
                 NavigationCardDescription = navController
